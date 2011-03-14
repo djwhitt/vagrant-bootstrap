@@ -1,0 +1,23 @@
+A set of scripts to help boostrap Vagrant base boxes.
+
+VMs should be setup as follows:
+- Disable USB
+- Disable audio
+- RAM: 360MB or 256MB
+- Disk: 40GB
+
+Use the following options during installs:
+- User: vagrant:vagrant
+- Hostname: vagrant-<osname>-<variant> (eg vagrant-maverick64-rvm)
+
+The following commands are useful for SSHing into boxes during setup via port
+forwarding on port 2222:
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 2222 vagrant@localhost
+scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -P 2222 script-name.sh vagrant@localhost:
+
+Misc notes:
+- It's useful to increase RAM during RVM installation.
+
+Ideas for the future:
+- Automate VM creation using VBoxManage.
+- Automate Ubuntu install using preseed file.
