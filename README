@@ -1,3 +1,8 @@
+Turns out LXC works better than Vagrant for most of my needs. I'll
+leave this here though in case anyone else wants to use it.
+
+---
+
 A set of scripts to help boostrap Vagrant base boxes.
 
 VMs should be setup as follows:
@@ -17,6 +22,7 @@ scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -P 2222 script-n
 
 Misc notes:
 - It's useful to increase RAM during RVM installation.
+- Be sure to change hostnames **BEFORE** boostrapping the chef server.
 
 Ideas for the future:
 - Automate VM creation using VBoxManage.
